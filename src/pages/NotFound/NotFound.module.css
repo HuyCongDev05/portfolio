@@ -1,0 +1,64 @@
+.container {
+    background-color: #000;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Roboto', 'Inter', sans-serif;
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.iconWrapper {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 0.5rem;
+}
+
+.icon {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(228, 0, 55, 0.2));
+    transform: translateX(2%); 
+}
+
+.message {
+    font-size: 1.2rem;
+    color: #CBABB3;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.backButton {
+    padding: 0.8rem 2.5rem;
+    background: transparent;
+    border: 1px solid #E40033;
+    color: #E40037;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+}
+
+.backButton:hover {
+    background: #E40037;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(228, 0, 55, 0.5);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .iconWrapper {
+        max-width: 90%;
+    }
+    .message {
+        font-size: 1rem;
+    }
+}

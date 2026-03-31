@@ -1,0 +1,32 @@
+.socialItem {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(236, 72, 153, 0.3);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.socialItem:hover {
+    border-color: rgba(255, 0, 51, 0.8);
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.2);
+    transform: scale(1.05);
+}
+
+.socialItem img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .socialItem {
+        width: 45px;
+        height: 45px;
+    }
+}
