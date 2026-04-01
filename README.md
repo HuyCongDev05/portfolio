@@ -122,6 +122,64 @@ npm run preview
 
 ---
 
+## 🚀 Deploy lên Netlify
+
+### Cách 1: Kéo thả thư mục `dist/` (nhanh nhất)
+
+1. Build project: `npm run build`
+2. Truy cập [app.netlify.com](https://app.netlify.com)
+3. Kéo thả thư mục **`dist/`** vào vùng **"Deploy manually"**
+4. Netlify sẽ tự cấp URL luôn – xong!
+
+---
+
+### Cách 2: Kết nối GitHub (deploy tự động)
+
+1. Push code lên GitHub repository
+2. Truy cập [app.netlify.com](https://app.netlify.com) → **Add new site** → **Import an existing project**
+3. Chọn **GitHub** → chọn repository của bạn
+4. Cấu hình build settings:
+
+| Trường | Giá trị |
+|---|---|
+| Build command | `npm run build` |
+| Publish directory | `dist` |
+
+5. Click **Deploy site**
+
+---
+
+### Cấu hình biến môi trường trên Netlify
+
+Sau khi deploy, thêm các biến môi trường của `.env` vào Netlify:
+
+**Site settings → Environment variables → Add a variable**
+
+```
+VITE_SOCIAL_FACEBOOK    = https://facebook.com/your-profile
+VITE_SOCIAL_TELEGRAM    = https://t.me/your-username
+VITE_SOCIAL_LINKEDIN    = https://linkedin.com/in/your-profile
+VITE_SOCIAL_TIKTOK      = https://tiktok.com/@your-username
+VITE_SOCIAL_GITHUB      = https://github.com/your-username
+VITE_SOCIAL_X           = https://x.com/your-username
+```
+
+> ⚠️ Sau khi thêm biến môi trường, bấm **Trigger deploy** để rebuild lại.
+
+---
+
+### Fix lỗi 404 khi reload trang (React Router)
+
+File `public/_redirects` đã được tạo sẵn trong project để fix lỗi này:
+
+```
+/* /index.html 200
+```
+
+File này sẽ được tự động copy vào `dist/` khi build, Netlify sẽ đọc và redirect mọi route về `index.html` cho React Router xử lý – **không cần làm thêm gì**.
+
+---
+
 ## 🌐 Tuỳ chọn: Expose qua Ngrok
 
 Nếu muốn test trên điện thoại thật qua mạng ngoài:
