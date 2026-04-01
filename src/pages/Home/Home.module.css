@@ -1,11 +1,10 @@
 .container {
     background-color: #fff;
     background-image: radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #FF0033 100%);
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     position: relative;
     font-family: 'Roboto', 'Inter', sans-serif;
-    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -83,38 +82,49 @@
     border-radius: 50%;
     border: 18px solid #FF0033;
     box-shadow: 0 0 50px #FF0033, inset 0 0 50px #FF0033;
+    pointer-events: none;
     z-index: 1;
-    top: 65%;
+    overflow: hidden;
+    bottom: calc(-10px + 230px);
     left: 50.5%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 50%);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     animation: slideUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .detail {
+    color: #4CAF50;
     border-color: #4CAF50;
     box-shadow: 0 0 60px #4CAF50, inset 0 0 60px #4CAF50;
 }
 
 .project {
+    color: #00BFFF;
     border-color: #00BFFF;
     box-shadow: 0 0 60px #00BFFF, inset 0 0 60px #00BFFF;
 }
 
 .contact {
+    color: #9400D3;
     border-color: #9400D3;
     box-shadow: 0 0 60px #9400D3, inset 0 0 60px #9400D3;
 }
 
+.jobTitle.detail, .jobTitle.project, .jobTitle.contact {
+    box-shadow: none;
+    text-shadow: 0 0 20px currentColor;
+}
+
 .avatarImg {
     position: absolute;
-    bottom: -10px;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 400px;
+    min-width: 115%;
+    max-width: 140%;
     height: auto;
     z-index: 2;
-    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     animation: slideUpAvatar 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
     opacity: 0;
 }
@@ -128,7 +138,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 5rem;
-    z-index: 10;
+    z-index: 20;
     animation: slideInRight 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
     opacity: 0;
 }
@@ -232,7 +242,7 @@
         opacity: 0;
     }
     100% {
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 50%);
         opacity: 1;
     }
 }
@@ -285,6 +295,7 @@
     .glowCircle {
         width: 360px;
         height: 360px;
+        bottom: calc(-10px + 200px);
     }
     .avatarImg {
         max-width: 340px;
@@ -321,7 +332,7 @@
     .socialSidebar {
         flex-direction: row;
         top: auto;
-        bottom: 2rem;
+        bottom: 4.5rem;
         left: 50%;
         transform: translateX(-50%);
         animation: slideUpAvatar 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
@@ -329,23 +340,24 @@
     .glowCircle {
         width: 280px;
         height: 280px;
-        top: 55%;
+        bottom: calc(22% + 140px);
         border-width: 12px;
     }
     .avatarImg {
         max-width: 260px;
-        bottom: 10px;
+        bottom: 22%;
     }
     .navLinks {
-        top: auto;
-        bottom: 7rem;
+        top: 28%;
+        bottom: auto;
         right: auto;
         left: 50%;
         transform: translateX(-50%);
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 2rem;
+        z-index: 20;
         animation: slideUpAvatar 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.7s forwards;
     }
     .navItem {
@@ -353,6 +365,7 @@
     }
     .navItem span {
         font-size: 0.9rem;
+        white-space: nowrap;
     }
     .navItem::before, .navItem::after {
         display: none;
@@ -360,7 +373,7 @@
     .footer {
         width: 100%;
         left: 0;
-        bottom: 10px;
+        bottom: 2rem;
         text-align: center;
     }
     .footer p {
@@ -370,17 +383,21 @@
 
 @media (max-width: 480px) {
     .jobTitle {
-        display: none;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
     }
     .glowCircle {
         width: 220px;
         height: 220px;
+        bottom: calc(28% + 120px);
     }
     .avatarImg {
         max-width: 200px;
+        bottom: 28%;
     }
     .navLinks {
-        gap: 1rem;
+        top: 22%;
+        gap: 1.2rem;
     }
     .navItem span {
         font-size: 0.8rem;

@@ -28,5 +28,11 @@
     .socialItem {
         width: 45px;
         height: 45px;
+        border: 1px solid rgba(0, 0, 0, 0.05); 
+    }
+    .socialItem:hover {
+        border-color: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        transform: scale(1);
     }
 }

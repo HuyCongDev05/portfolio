@@ -6,7 +6,6 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -14,4 +13,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+
+  // mở ngrok
+  server: {
+    host: true,
+    allowedHosts: ['your-subdomain.ngrok-free.dev'],
+    hmr: {
+      host: 'your-subdomain.ngrok-free.dev',
+      clientPort: 443,
+      protocol: 'wss'
+    }
+  }
 })

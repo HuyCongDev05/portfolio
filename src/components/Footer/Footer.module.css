@@ -1,0 +1,136 @@
+.footer {
+    width: 100%;
+    background-color: #fff;
+    background-image: radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #9400D3 100%);
+    font-family: 'Roboto', 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 4rem;
+    right: 4rem;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #9400D3, transparent);
+    opacity: 0.4;
+}
+
+.inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 2.5rem;
+}
+
+.navLink {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #444;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.25s ease;
+    position: relative;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: #9400D3;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.navLink:hover {
+    color: #9400D3;
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.socialLink {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.socialLink img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.socialLink:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(148, 0, 211, 0.2);
+    background: #fff;
+}
+
+.popIn {
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes popIn {
+    0%   { transform: scale(0.3); opacity: 0; }
+    60%  { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.copy {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .footer::before {
+        left: 1rem;
+        right: 1rem;
+    }
+    .inner {
+        padding: 2.5rem 1.5rem 2rem;
+        gap: 1.5rem;
+    }
+    .navLink {
+        font-size: 0.85rem;
+    }
+}

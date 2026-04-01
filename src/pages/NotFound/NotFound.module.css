@@ -1,5 +1,4 @@
 .container {
-    background-color: #000;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -35,23 +34,7 @@
 }
 
 .backButton {
-    padding: 0.8rem 2.5rem;
-    background: transparent;
-    border: 1px solid #E40033;
-    color: #E40037;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    letter-spacing: 0.1em;
-    font-weight: 400;
-}
-
-.backButton:hover {
-    background: #E40037;
-    color: #fff;
-    box-shadow: 0 0 20px rgba(228, 0, 55, 0.5);
-    transform: translateY(-2px);
+    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
